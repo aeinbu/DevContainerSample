@@ -18,13 +18,18 @@
 	},
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    "forwardPorts": ["pgadmin:8081"],
+    "forwardPorts": ["web:8080", "web:8081", "seq:8089", "pgadmin:8088"],
 	"portsAttributes": {
-		"8081": {
-			"label": "pgAdmin",
+		"seq:8089": {
+			"label": "seq log server",
 			"onAutoForward": "notify",
 			"requireLocalPort": true
-		}
+		},
+		"pgadmin:8088": {
+			"label": "pgAdmin 4",
+			"onAutoForward": "notify",
+			"requireLocalPort": true
+}
 	},
 
 	// [Optional] To reuse of your local HTTPS dev cert:
@@ -47,7 +52,8 @@
 	//      3. Open a terminal in VS Code and run "mkdir -p /home/vscode/.aspnet/https && mv aspnetapp.pfx /home/vscode/.aspnet/https"
 
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "bash -i .devcontainer/scripts/setup-dotnet-env.sh",
+    "postCreateCommand": "bash -i .devcontainer/scripts/postCreate.sh",
+	"postStartCommand": "bash -i .devcontainer/scripts/postStart.sh",
 
     // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
     "remoteUser": "vscode"
