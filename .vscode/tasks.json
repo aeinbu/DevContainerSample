@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/TestDatabaseConsole/TestDatabaseConsole.csproj",
+                "${workspaceFolder}/Backend/Backend.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/TestDatabaseConsole/TestDatabaseConsole.csproj",
+                "${workspaceFolder}/Backend/Backend.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/TestDatabaseConsole/TestDatabaseConsole.csproj"
+                "${workspaceFolder}/Backend/Backend.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
